@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <h2>Categories</h2>
+            <button (click)="openDialogCategory()" mat-raised-button color="primary">Add New</button>
+            <mat-selection-list (selectionChange)="onSelection($event, categoriyList.selectedOptions)" #categoriyList [multiple]="false">
+                <mat-list-option [(ngModel)]="categories" [value]='category' *ngFor="let category of categories">
+                    {{category}}
+                </mat-list-option>
+            </mat-selection-list>
+            <p>
+                Option selected: {{this.categoryService.selectedCategory}}
+            </p>
+        </div>
+        <div class="col-lg-1">
+            <mat-divider [vertical]="true"></mat-divider>
+        </div>
+        <div class="col-lg-8">
+            <h2><span matBadge="4" matBadgeOverlap="false">Dishes </span>
+            </h2>
+            <div class="row row-cols-4">
+                <button (click)="openDialogDish()" mat-raised-button color="primary">Add new dish</button>
+                <mat-card class="example-card col" *ngFor="let dish of dishes">
+                    <mat-card-header>
+                        <mat-card-title>{{dish.name}}</mat-card-title>
+                        <mat-card-subtitle>{{dish.category}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="https://i.ytimg.com/vi/XMGKGR-l9gU/maxresdefault.jpg" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <p>
+                            Price: 100 INR
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button>Edit</button>
+                        <button mat-raised-button>Delete</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+
+
+        </div>
+    </div>
+</div>

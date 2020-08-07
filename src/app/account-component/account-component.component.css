@@ -1,0 +1,13 @@
+.example-card {
+    max-width: 200px;
+}
+
+.example-header-image {
+    background-size: cover;
+}
+
+.mat-list-single-selected-option,
+.mat-list-single-selected-option:hover,
+.mat-list-single-selected-option:focus {
+    background: rgba(33, 150, 243, 0.56) !important;
+}

@@ -1,0 +1,20 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+    <p>Add New Category</p>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input ngDefaultControl [(ngModel)]="newDish.name" matInput>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input ngDefaultControl [(ngModel)]="newDish.price" matInput>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Image</mat-label>
+        <input ngDefaultControl [(ngModel)]="newDish.image" matInput>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="newDish" (click)=" addNewDish() " cdkFocusInitial>Add</button>
+</div>
